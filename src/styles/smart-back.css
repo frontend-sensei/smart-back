@@ -1,0 +1,70 @@
+:root {
+  --sb-arrow-transition: "unset";
+}
+
+.smart-back {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  touch-action: pan-y;
+}
+
+.smart-back__side {
+  width: 40px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #bbbbbb;
+}
+
+.smart-back__side--left {
+  left: 0;
+}
+
+.smart-back__side--right {
+  right: 0;
+}
+
+.smart-back__arrow {
+  height: 0;
+  width: 0;
+  position: fixed;
+  right: -10px;
+  transition: var(--sb-arrow-transition);
+}
+
+.smart-back__arrow--active .smart-back__arrow-part-1,
+.smart-back__arrow--active-from-right .smart-back__arrow-part-1 {
+  transform: translateY(1px) rotateZ(-45deg);
+}
+
+.smart-back__arrow--active .smart-back__arrow-part-2,
+.smart-back__arrow--active-from-right .smart-back__arrow-part-2 {
+  transform: translateY(-1px) rotateZ(45deg);
+}
+
+.smart-back__arrow--active-from-left .smart-back__arrow-part-1 {
+  transform: translateY(1px) rotateZ(-135deg);
+}
+
+.smart-back__arrow--active-from-left .smart-back__arrow-part-2 {
+  transform: translateY(-1px) rotateZ(135deg);
+}
+
+.smart-back__arrow-part {
+  width: 15px;
+  height: 2px;
+  background-color: #150423;
+  border-radius: 10px;
+  transform-origin: 1px center;
+  transition: 0.33s cubic-bezier(0, 0, 0.42, 1.69);
+}
+
+.smart-back__arrow-part-1 {
+  transform: translateY(1px) rotateZ(-90deg);
+}
+
+.smart-back__arrow-part-2 {
+  transform: translateY(-1px) rotateZ(90deg);
+}
