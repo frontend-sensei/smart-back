@@ -1,10 +1,10 @@
 :root {
   --sb-arrow-transition: "unset";
+  --sb-arrow-color: #bcbcbc;
 }
 
 .smart-back {
   position: fixed;
-
   top: 0;
   left: 0;
   touch-action: pan-y;
@@ -15,7 +15,6 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  background-color: #bbbbbb;
 }
 
 .smart-back__side--left {
@@ -55,7 +54,7 @@
 .smart-back__arrow-part {
   width: 15px;
   height: 2px;
-  background-color: #150423;
+  background-color: var(--sb-arrow-color);
   border-radius: 10px;
   transform-origin: 1px center;
   transition: 0.33s cubic-bezier(0, 0, 0.42, 1.69);
