@@ -7,6 +7,7 @@
 [![npm latest package](https://img.shields.io/npm/v/smart-back?logo=npm&logoColor=fff&label=npm&color=limegreen)](https://www.npmjs.com/package/smart-back)
 [![js minified](https://img.shields.io/badge/js%20minified-10kb-brightgreen)](https://www.npmjs.com/package/smart-back)
 [![css minified](https://img.shields.io/badge/css%20minified-1kb-brightgreen)](https://www.npmjs.com/package/smart-back)
+[![code coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://www.npmjs.com/package/smart-back)
 
 Available on the [npm](https://www.npmjs.com/package/smart-back).
 
