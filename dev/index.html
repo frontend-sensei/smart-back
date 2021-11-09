@@ -5,12 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../dist/smart-back.min.css" />
     <style>
+      html,
       body {
-        padding: 40px;
+        height: 100%;
+      }
+      body {
+        margin: 0;
         font-size: 40px;
+        font-family: 'Gayathri', sans-serif;
         text-align: center;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      .link {
+        color: #000;
+      }
+      .headline {
+        max-width: 240px;
+        text-align: left;
+        font-size: 38px;
+      }
+      .link,
+      .headline {
+        margin: auto;
+      }
+      @media (min-width: 500px) {
+        .headline {
+          max-width: 470px;
+          font-size: 70px;
+        }
       }
     </style>
   </head>
@@ -20,10 +53,18 @@
       const smartBack = new SmartBack();
 
       function pageComponent() {
-        const element = document.createElement("a");
-        element.href = "#test";
-        element.innerHTML = "Link";
-        return element;
+        const component = document.createElement("div");
+        component.className = "content";
+        component.innerHTML = `
+          <a href="#test" class="link">
+            Link
+          </a>
+          <h1 class="headline">
+            SMART GESTURES ON THE WEB
+          </h1>
+        `;
+
+        return component;
       }
 
       document.body.appendChild(pageComponent());
