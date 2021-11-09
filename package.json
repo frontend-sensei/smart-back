@@ -1,6 +1,6 @@
 {
   "name": "smart-back",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Smart gesture for navigation across web application",
   "main": "dist/smart-back.esm.js",
   "browser": "dist/smart-back.umd.js",
