@@ -55,6 +55,7 @@
       this.ARROW_TRIGGERING_OFFSET = this._options.validate("arrowTriggeringOffset", 2);
       this.STATIC_ACTIVE_TRANSLATE_X = this._options.validate("staticActiveTranslateX", 40);
       this.ENABLE_ARROW_MIRRORING = this._options.validate("enableArrowMirroring", true);
+      this.VIBRATION = this._options.validate("vibration", 10);
       this.CALLBACK = this._options.validate("callback", history.back.bind(window.history));
       this._ui = vendors._uiClass;
       this._nodes = vendors._nodesClass;
@@ -229,6 +230,8 @@
     }, {
       key: "touchmove",
       value: function touchmove(event) {
+        event.preventDefault();
+
         if (event.touches.length > 1) {
           this.instance._listenersHandling.removeAdditionalListeners();
 
@@ -360,6 +363,8 @@
 
           _this.instance._movement.needSkipEvent = false;
           _this.isActive = true;
+
+          _this.vibrate();
         }, this.instance.TRANSITION_DURATION);
       }
     }, {
@@ -452,6 +457,15 @@
 
           _this3.updateTransition("unset");
         }, this.instance.TRANSITION_DURATION);
+      }
+    }, {
+      key: "vibrate",
+      value: function vibrate() {
+        if (!window.navigator.vibrate) {
+          return;
+        }
+
+        window.navigator.vibrate(this.instance.VIBRATION);
       }
     }]);
 

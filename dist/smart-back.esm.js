@@ -39,6 +39,7 @@ class SmartBackService {
       "enableArrowMirroring",
       true
     );
+    this.VIBRATION = this._options.validate("vibration", 10);
     this.CALLBACK = this._options.validate(
       "callback",
       history.back.bind(window.history)
@@ -187,6 +188,7 @@ class SmartBackListeners {
     this.instance._arrow.setStyle("top", `${event.touches[0].clientY - 55}px`);
   }
   touchmove(event) {
+    event.preventDefault();
     if (event.touches.length > 1) {
       this.instance._listenersHandling.removeAdditionalListeners();
       return;
@@ -297,7 +299,6 @@ class SmartBackArrow {
 
   setActive() {
     this.instance._movement.needSkipEvent = true;
-
     this.arrowStateHandler("add");
     this.updateTransition(
       `transform .${this.instance.TRANSITION_DURATION}s ease-in-out`
@@ -307,6 +308,7 @@ class SmartBackArrow {
       this.updateTransition("unset");
       this.instance._movement.needSkipEvent = false;
       this.isActive = true;
+      this.vibrate();
     }, this.instance.TRANSITION_DURATION);
   }
   setInactive() {
@@ -372,6 +374,12 @@ class SmartBackArrow {
       this.instance._movement.resetValues();
       this.updateTransition("unset");
     }, this.instance.TRANSITION_DURATION);
+  }
+  vibrate() {
+    if (!window.navigator.vibrate) {
+      return;
+    }
+    window.navigator.vibrate(this.instance.VIBRATION);
   }
 }
 
