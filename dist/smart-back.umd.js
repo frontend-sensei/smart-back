@@ -230,6 +230,8 @@
     }, {
       key: "touchmove",
       value: function touchmove(event) {
+        event.preventDefault();
+
         if (event.touches.length > 1) {
           this.instance._listenersHandling.removeAdditionalListeners();
 

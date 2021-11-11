@@ -21,6 +21,7 @@ const getBaseEvent = () => {
         side: "left",
       },
     },
+    preventDefault: () => false,
   };
 };
 
