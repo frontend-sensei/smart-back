@@ -39,6 +39,7 @@ export class SmartBackService {
       "enableArrowMirroring",
       true
     );
+    this.VIBRATION = this._options.validate("vibration", 10);
     this.CALLBACK = this._options.validate(
       "callback",
       history.back.bind(window.history)

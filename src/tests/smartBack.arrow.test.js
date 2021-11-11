@@ -32,6 +32,7 @@ describe("SmartBack Arrow", () => {
   it("setActive: should call methods and set properties after timeout", () => {
     jest.useFakeTimers();
     const updateTransitionFn = (smartBack._arrow.updateTransition = jest.fn());
+    const vibrateFn = (smartBack._arrow.vibrate = jest.fn());
 
     smartBack._arrow.setActive();
 
@@ -46,6 +47,7 @@ describe("SmartBack Arrow", () => {
     const isActive = smartBack._arrow.isActive;
 
     expect(updateTransitionFn).toHaveBeenNthCalledWith(2, "unset");
+    expect(vibrateFn).toHaveBeenCalled();
     expect(needSkipEvent).toBeFalsy();
     expect(isActive).toBeTruthy();
   });

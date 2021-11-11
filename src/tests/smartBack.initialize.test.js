@@ -13,6 +13,7 @@ describe("SmartBack", () => {
       arrowTriggeringOffset: "10",
       staticActiveTranslateX: "50",
       enableArrowMirroring: false,
+      vibration: 20,
       callback: () => console.log("Done!"),
     };
     const smartBack = new SmartBack(options);

@@ -62,6 +62,7 @@ const options = {
   arrowTriggeringOffset: 2,
   staticActiveTranslateX: 40,
   enableArrowMirroring: true,
+  vibration: 10,
   callback: history.back.bind(window.history),
 };
 ```
@@ -72,6 +73,7 @@ const options = {
 | arrowTriggeringOffset  | number   | 2            | Something like sensitivity. The number of pixels you need to swipe to activate the arrow |
 | staticActiveTranslateX | number   | 40           | The number of pixels the arrow moves during the activation animation                     |
 | enableArrowMirroring   | boolean  | true         | Mirroring left arrow                                                                     |
+| vibration              | number   | 10           | Vibration when the arrow is activated                                                    |
 | callback               | function | history.back | The function to be executed after a successful swipe                                     |
 
 ## Development

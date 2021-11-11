@@ -6,7 +6,6 @@ export class SmartBackArrow {
 
   setActive() {
     this.instance._movement.needSkipEvent = true;
-
     this.arrowStateHandler("add");
     this.updateTransition(
       `transform .${this.instance.TRANSITION_DURATION}s ease-in-out`
@@ -16,6 +15,7 @@ export class SmartBackArrow {
       this.updateTransition("unset");
       this.instance._movement.needSkipEvent = false;
       this.isActive = true;
+      this.vibrate();
     }, this.instance.TRANSITION_DURATION);
   }
   setInactive() {
@@ -81,5 +81,11 @@ export class SmartBackArrow {
       this.instance._movement.resetValues();
       this.updateTransition("unset");
     }, this.instance.TRANSITION_DURATION);
+  }
+  vibrate() {
+    if (!window.navigator.vibrate) {
+      return;
+    }
+    window.navigator.vibrate(this.instance.VIBRATION);
   }
 }

@@ -7,6 +7,7 @@ SmartBackService {
   "ENABLE_ARROW_MIRRORING": false,
   "STATIC_ACTIVE_TRANSLATE_X": "50",
   "TRANSITION_DURATION": "150",
+  "VIBRATION": 20,
   "_arrow": SmartBackArrow {
     "instance": [Circular],
     "isActive": false,
@@ -84,6 +85,7 @@ SmartBackService {
       "enableArrowMirroring": false,
       "staticActiveTranslateX": "50",
       "transitionDuration": "150",
+      "vibration": 20,
     },
   },
   "_ui": SmartBackUI {
@@ -147,6 +149,7 @@ SmartBackService {
   "ENABLE_ARROW_MIRRORING": true,
   "STATIC_ACTIVE_TRANSLATE_X": 40,
   "TRANSITION_DURATION": 140,
+  "VIBRATION": 10,
   "_arrow": SmartBackArrow {
     "instance": [Circular],
     "isActive": false,
