@@ -188,6 +188,7 @@ class SmartBackListeners {
     this.instance._arrow.setStyle("top", `${event.touches[0].clientY - 55}px`);
   }
   touchmove(event) {
+    event.preventDefault();
     if (event.touches.length > 1) {
       this.instance._listenersHandling.removeAdditionalListeners();
       return;
